@@ -6,9 +6,6 @@ public class ShapeCollector {
 
     private ArrayList<Shape> figures = new ArrayList<>();
 
-    public ShapeCollector(Shape shape){
-    }
-
     public void addFigure(Shape shape) {
         figures.add(shape);
     }
