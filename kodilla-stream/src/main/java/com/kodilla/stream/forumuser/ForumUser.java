@@ -55,7 +55,6 @@ public class ForumUser {
         return years;
     }
 
-    public void isAtLeast20YearsOld() {
-    }
+
 }
 
