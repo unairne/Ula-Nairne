@@ -1,27 +1,13 @@
 package com.kodilla.exception.test;
 
 public class FirstChallenge {
-
     public double divide(double a, double b) throws ArithmeticException {
-        double result = 0;
-        try {
-            if (b == 0) {
-                throw new ArithmeticException();
-            }
-            return a / b;
-
-        } catch (ArithmeticException e) {
-            System.err.println("Exception: divided by zero");
-        } finally {
-            if (b == 0) {
-                System.out.println("The operation result was changed to 0");
-            } else {
-                System.out.println("Code was executed correctly");
-            }
+        if (b == 0) {
+            throw new ArithmeticException();
         }
-        return result;
+        System.out.println("The result is: " + a/b);
+        return a / b;
     }
-
 
     /**
      * This main can throw an ArithmeticException!!!
@@ -29,12 +15,13 @@ public class FirstChallenge {
      * @param args
      */
     public static void main(String[] args) {
-
         FirstChallenge firstChallenge = new FirstChallenge();
-
-        double result = firstChallenge.divide(3, 0);
-
-        System.out.println(result);
-
+        try {
+            double result = firstChallenge.divide(3, 0);
+        } catch (ArithmeticException e) {
+            System.out.println("You can't divide through zero! This ends error: " + e);
+        } finally {
+            System.out.println("End of program");
+        }
     }
 }
